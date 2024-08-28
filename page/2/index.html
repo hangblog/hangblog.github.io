@@ -21,30 +21,27 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://example.com/categories/index.html">
+<meta property="og:title" content="Hang的Blog">
+<meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Hang的Blog">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-17T14:19:53.000Z">
-<meta property="article:modified_time" content="2024-08-17T14:21:05.616Z">
 <meta property="article:author" content="Hang">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/">
+<link rel="canonical" href="http://example.com/page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
+    isHome : true,
     isPost : false,
     lang   : 'zh-cn'
   };
 </script>
 
-  <title>categories | Hang的Blog
-</title>
+  <title>Hang的Blog</title>
   
 
 
@@ -168,51 +165,162 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content index posts-expand">
             
-
-    
-    
-    
-    <div class="post-block" lang="zh-cn">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
-
-<div class="post-meta">
+      
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/01/valine%E8%AF%84%E8%AE%BA%E5%BC%82%E5%B8%B8%E9%97%AE%E9%A2%98/">
 
-</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hang">
+      <meta itemprop="description" content="">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang的Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/01/01/valine%E8%AF%84%E8%AE%BA%E5%BC%82%E5%B8%B8%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">解决hexo-butterfly valine评论异常问题</a>
+        </h2>
 
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              No categories
-            </div>
-            <div class="category-all">
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
               
-            </div>
-          </div>
-        
-      </div>
+
+              <time title="Created: 2023-01-01 00:01:01 / Modified: 08:39:13" itemprop="dateCreated datePublished" datetime="2023-01-01T00:01:01+08:00">2023-01-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-      
+          <p><strong>注：想直接看解决方法直接看最后</strong></p>
+<h2 id="事情的起因"><a href="#事情的起因" class="headerlink" title="事情的起因"></a>事情的起因</h2><p>前几天不是折腾了一个butterfly主题么（不出意外你现在看到的就是了），然后一直在研究主题美化，由于之前使用fluid主题已经正常配置了评论系统，所以我就直接照搬了appkey和appid，也没有测试，直到前两天朋友说评论用不了，我才发现问题……</p>
+<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><p>先看下我当时的配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line"><span class="attr">appId:</span> <span class="string">【没问题】</span></span><br><span class="line"><span class="attr">appKey:</span> <span class="string">【没问题】</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">&#x27;&#x27;</span> <span class="comment"># gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line"><span class="attr">serverURLs:</span> <span class="string">https://cn.gravatar.com</span></span><br><span class="line"><span class="attr">bg:</span> <span class="comment"># valine background</span></span><br><span class="line"><span class="attr">visitor:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">option:</span></span><br></pre></td></tr></table></figure>
+
+<p>我依稀记得当时只对appid和appkey做了修改，不应该有问题啊？？可是我<strong>本地&#x2F;服务器测试评论点己发送时一直转圈，无法发送至leancloud服务器</strong>，这是怎么一回事……</p>
+<p>于是我在localhost里运行了服务器，打开Google浏览器f12开发者预览，查看当我点击发送时的network活动</p>
+<p>发现被发送到了<a target="_blank" rel="noopener" href="https://cn.gravatar.com/">https://cn.gravatar.com</a> </p>
+<p>查看配置，是<strong>serverURLs</strong>这一项的问题</p>
+<p>来到官方文档<a target="_blank" rel="noopener" href="https://valine.js.org/#/avatar">https://valine.js.org/#/avatar</a> 查看“配置项”， 找到<strong>serverURLs</strong>，发现原文档的叙述如下</p>
+<p><img src="/img/iShot_2022-12-31_18.56.45.png" alt="官方截图"></p>
+<p>原来如此，是多余的设置！</p>
+<h2 id="最终解决"><a href="#最终解决" class="headerlink" title="最终解决"></a>最终解决</h2><p>修改如下（删除或注释掉serverURLs）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line"><span class="attr">appId:</span> <span class="string">【没问题】</span></span><br><span class="line"><span class="attr">appKey:</span> <span class="string">【没问题】</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">&#x27;&#x27;</span> <span class="comment"># gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line"><span class="comment">#我直接注释掉了 --&gt; serverURLs: https://cn.gravatar.com</span></span><br><span class="line"><span class="attr">bg:</span> <span class="comment"># valine background</span></span><br><span class="line"><span class="attr">visitor:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">option:</span></span><br></pre></td></tr></table></figure>
+
+<p>OK，问题就此解决：）</p>
+<p>哦另外新年快乐！</p>
+
       
     </div>
-    
 
     
     
     
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/24/%E6%B0%B4%E6%B5%92%E4%BC%A0%E7%AB%A0%E8%8A%82%E5%A4%A7%E6%84%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang的Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/24/%E6%B0%B4%E6%B5%92%E4%BC%A0%E7%AB%A0%E8%8A%82%E5%A4%A7%E6%84%8F/" class="post-title-link" itemprop="url">水浒传章节大意</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-24 13:49:58" itemprop="dateCreated datePublished" datetime="2022-11-24T13:49:58+08:00">2022-11-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-12-30 13:48:14" itemprop="dateModified" datetime="2022-12-30T13:48:14+08:00">2022-12-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>前情提要</strong><br>这篇文章发布一下我搜集的水浒传章节大意<br>是在其他网站搜集的，如有侵权还请与我联系</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/24/%E6%B0%B4%E6%B5%92%E4%BC%A0%E7%AB%A0%E8%8A%82%E5%A4%A7%E6%84%8F/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>

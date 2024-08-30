@@ -172,6 +172,69 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="http://1ightman.top/2024/08/30/%E8%A7%A3%E5%86%B3wayland%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C%E6%9F%90%E4%BA%9BX%E5%BA%94%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hang的Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/30/%E8%A7%A3%E5%86%B3wayland%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C%E6%9F%90%E4%BA%9BX%E5%BA%94%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">解决wayland无法运行某些X应用的问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-08-30 11:18:10 / Modified: 11:27:29" itemprop="dateCreated datePublished" datetime="2024-08-30T11:18:10+08:00">2024-08-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>先放出报错内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">localuser:root being added to access control list</span><br><span class="line">Error executing command as another user: No authentication agent found.</span><br><span class="line">localuser:root being removed from access control list</span><br></pre></td></tr></table></figure>
+<p>然后我询问了ChatGPT，和我的预料差不多，是因为Wayland和x11不同的底层设计导致的（基本上是因为在Wayland上，默认是不允许以root运行应用的，这也是为什么说Wayland更安全）<br>但是总不能不用啊……所以解决方案就是暂时放开权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhost +si:localuser:root                                                                                                                                                                        </span><br><span class="line">sudo （运行你需要的应用，当然从启动器打开也是OK的                                                                                                                                               xhost -si:localuser:root   </span><br></pre></td></tr></table></figure>
+<p>别忘了为了安全性关闭授权</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
     <link itemprop="mainEntityOfPage" href="http://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -195,10 +258,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-08-28 09:27:29 / Modified: 09:48:19" itemprop="dateCreated datePublished" datetime="2024-08-28T09:27:29+08:00">2024-08-28</time>
+              <time title="Created: 2024-08-28 09:27:29" itemprop="dateCreated datePublished" datetime="2024-08-28T09:27:29+08:00">2024-08-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-30 11:11:16" itemprop="dateModified" datetime="2024-08-30T11:11:16+08:00">2024-08-30</time>
+              </span>
 
           
 
@@ -265,10 +334,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-08-27 15:58:20 / Modified: 16:06:21" itemprop="dateCreated datePublished" datetime="2024-08-27T15:58:20+08:00">2024-08-27</time>
+              <time title="Created: 2024-08-27 15:58:20" itemprop="dateCreated datePublished" datetime="2024-08-27T15:58:20+08:00">2024-08-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-30 11:20:32" itemprop="dateModified" datetime="2024-08-30T11:20:32+08:00">2024-08-30</time>
+              </span>
 
           
 
@@ -281,7 +356,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>众所周知，由于一些原因，raw.githubusercontent.com遭受了DNS污染，所以有的时候开了也访问不了<br>解决办法 手动添加hosts记录<br><a target="_blank" rel="noopener" href="https://github.com/maxiaof/github-hosts">参考文章</a><br>添加到到如下位置<br>    Windows 系统：C:\Windows\System32\drivers\etc\hosts。<br>    Mac（苹果电脑）系统：&#x2F;etc&#x2F;hosts。<br>    Linux 系统：&#x2F;etc&#x2F;hosts。</p>
+          <p>众所周知，由于一些原因，raw.githubusercontent.com遭受了DNS污染，所以有的时候开了也访问不了<br>解决办法 手动添加hosts记录 (也可以更改一些“可靠”的dns 国内的阿里，或者国外的Google NextDNS等等（一般国外的都不会对github搞事情<br><a target="_blank" rel="noopener" href="https://github.com/maxiaof/github-hosts">参考文章</a><br><strong>注意，域名解析可能会有变动，如果出现问题建议从上面重新获取解析记录</strong><br>添加到到如下位置<br>    Windows 系统：C:\Windows\System32\drivers\etc\hosts。<br>    Mac（苹果电脑）系统：&#x2F;etc&#x2F;hosts。<br>    Linux 系统：&#x2F;etc&#x2F;hosts。</p>
 <p><strong>建议把路由器上的也改了，这样更方便</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">140.82.112.26 alive.github.com</span><br><span class="line">140.82.113.25 live.github.com</span><br><span class="line">185.199.108.154 github.githubassets.com</span><br><span class="line">140.82.113.21 central.github.com</span><br><span class="line">185.199.110.133 desktop.githubusercontent.com</span><br><span class="line">185.199.110.153 assets-cdn.github.com</span><br><span class="line">185.199.110.133 camo.githubusercontent.com</span><br><span class="line">185.199.110.133 github.map.fastly.net</span><br><span class="line">146.75.121.194 github.global.ssl.fastly.net</span><br><span class="line">140.82.121.4 gist.github.com</span><br><span class="line">185.199.111.153 github.io</span><br><span class="line">140.82.121.3 github.com</span><br><span class="line">192.0.66.2 github.blog</span><br><span class="line">140.82.121.5 api.github.com</span><br><span class="line">185.199.108.133 raw.githubusercontent.com</span><br><span class="line">185.199.110.133 user-images.githubusercontent.com</span><br><span class="line">185.199.111.133 favicons.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars5.githubusercontent.com</span><br><span class="line">185.199.111.133 avatars4.githubusercontent.com</span><br><span class="line">185.199.109.133 avatars3.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars2.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars1.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars0.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars.githubusercontent.com</span><br><span class="line">140.82.121.10 codeload.github.com</span><br><span class="line">3.5.28.69 github-cloud.s3.amazonaws.com</span><br><span class="line">54.231.140.73 github-com.s3.amazonaws.com</span><br><span class="line">54.231.135.129 github-production-release-asset-2e65be.s3.amazonaws.com</span><br><span class="line">52.217.161.241 github-production-user-asset-6210df.s3.amazonaws.com</span><br><span class="line">3.5.29.105 github-production-repository-file-5c1aeb.s3.amazonaws.com</span><br><span class="line">185.199.109.153 githubstatus.com</span><br><span class="line">140.82.113.18 github.community</span><br><span class="line">51.137.3.17 github.dev</span><br><span class="line">140.82.113.22 collector.github.com</span><br><span class="line">13.107.42.16 pipelines.actions.githubusercontent.com</span><br><span class="line">185.199.109.133 media.githubusercontent.com</span><br><span class="line">185.199.108.133 cloud.githubusercontent.com</span><br><span class="line">185.199.111.133 objects.githubusercontent.com</span><br><span class="line">#Github Hosts End</span><br></pre></td></tr></table></figure>
 
@@ -326,10 +401,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-08-27 15:40:54 / Modified: 15:56:01" itemprop="dateCreated datePublished" datetime="2024-08-27T15:40:54+08:00">2024-08-27</time>
+              <time title="Created: 2024-08-27 15:40:54" itemprop="dateCreated datePublished" datetime="2024-08-27T15:40:54+08:00">2024-08-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-30 11:00:01" itemprop="dateModified" datetime="2024-08-30T11:00:01+08:00">2024-08-30</time>
+              </span>
 
           
 
@@ -451,10 +532,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-10-15 11:05:10 / Modified: 11:05:22" itemprop="dateCreated datePublished" datetime="2023-10-15T11:05:10+08:00">2023-10-15</time>
+              <time title="Created: 2023-10-15 11:05:10" itemprop="dateCreated datePublished" datetime="2023-10-15T11:05:10+08:00">2023-10-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-30 11:11:26" itemprop="dateModified" datetime="2024-08-30T11:11:26+08:00">2024-08-30</time>
+              </span>
 
           
 
@@ -516,10 +603,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-08-21 13:06:39 / Modified: 13:15:05" itemprop="dateCreated datePublished" datetime="2023-08-21T13:06:39+08:00">2023-08-21</time>
+              <time title="Created: 2023-08-21 13:06:39" itemprop="dateCreated datePublished" datetime="2023-08-21T13:06:39+08:00">2023-08-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-30 11:11:35" itemprop="dateModified" datetime="2024-08-30T11:11:35+08:00">2024-08-30</time>
+              </span>
 
           
 
@@ -660,7 +753,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-02 01:00:33" itemprop="dateModified" datetime="2023-09-02T01:00:33+08:00">2023-09-02</time>
+                <time title="Modified: 2024-08-30 11:10:35" itemprop="dateModified" datetime="2024-08-30T11:10:35+08:00">2024-08-30</time>
               </span>
 
           
@@ -784,82 +877,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
-    <link itemprop="mainEntityOfPage" href="http://1ightman.top/2023/06/28/%E5%88%86%E4%BA%ABHuaweiWatch2%E5%88%B7%E6%9C%BA%E5%8C%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang的Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/28/%E5%88%86%E4%BA%ABHuaweiWatch2%E5%88%B7%E6%9C%BA%E5%8C%85/" class="post-title-link" itemprop="url">分享HuaweiWatch2刷机包</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-28 22:25:11" itemprop="dateCreated datePublished" datetime="2023-06-28T22:25:11+08:00">2023-06-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-12 21:42:08" itemprop="dateModified" datetime="2023-07-12T21:42:08+08:00">2023-07-12</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1H9o3SBo1UdsHSrXBE_TyGg">https://pan.baidu.com/s/1H9o3SBo1UdsHSrXBE_TyGg</a> 提取码: XMRX<br>刷机包通用 但是platform tools是linux的，因为比较难找所以直接给了，windows自己找一下，可能还需要驱动啥的<br>#</p>
-<p>刷机指令</p>
-<pre><code>fastboot oem unlock（此时会有yes/no两种选项，按一下电源键使yes变红，然后长按电源键）
-fastboot flash bootloader bootloder.img
-fastboot flash boot boot.img
-fastboot flash cache cache.img
-fastboot flash recovery recovery.img
-fastboot flash system system.img
-fastboot flash userdata userdats.img
-fastboot oem lock(不回锁每次开机都有安全提示）
-fastboot reboot(重启，然后用手机配对即可)
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -929,14 +946,14 @@ fastboot reboot(重启，然后用手机配对即可)
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

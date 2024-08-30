@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"1ightman.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"1ightman.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="写在前面本文不适合那些收到【特别关注】的人士，包括但不限于明星本文也之探讨如何应对中等及以下水平的开盒 不能也没有能力防止更高级别的渗透 如专业机构，甚至于国家级力量 (⊙o⊙)仅供参考，不负责任  ：） 引用几句话👀虽然是计算机安全，不过一些原则很好用 1234567收紧安全措施有可能达到使系统无法使用的程度。安全性与便利性需要得到平衡。诀窍在于建立一个安全且有用的系统。最大的威胁是（并且一直">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈“开盒”应对措施">
-<meta property="og:url" content="http://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/index.html">
-<meta property="og:site_name" content="Hang的Blog">
+<meta property="og:url" content="https://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/index.html">
+<meta property="og:site_name" content="航哥的部落格">
 <meta property="og:description" content="写在前面本文不适合那些收到【特别关注】的人士，包括但不限于明星本文也之探讨如何应对中等及以下水平的开盒 不能也没有能力防止更高级别的渗透 如专业机构，甚至于国家级力量 (⊙o⊙)仅供参考，不负责任  ：） 引用几句话👀虽然是计算机安全，不过一些原则很好用 1234567收紧安全措施有可能达到使系统无法使用的程度。安全性与便利性需要得到平衡。诀窍在于建立一个安全且有用的系统。最大的威胁是（并且一直">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-28T01:27:29.000Z">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="网络安全">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/">
+<link rel="canonical" href="https://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>浅谈“开盒”应对措施 | Hang的Blog</title>
+  <title>浅谈“开盒”应对措施 | 航哥的部落格</title>
   
 
 
@@ -97,13 +97,14 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hang的Blog</h1>
+      <h1 class="site-title">航哥的部落格</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -138,11 +139,38 @@
     <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -168,16 +196,16 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
-    <link itemprop="mainEntityOfPage" href="http://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/">
+    <link itemprop="mainEntityOfPage" href="https://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/p.png">
       <meta itemprop="name" content="Hang">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hang的Blog">
+      <meta itemprop="name" content="航哥的部落格">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -267,10 +295,10 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/" title="浅谈“开盒”应对措施">http://1ightman.top/2024/08/28/浅谈“开盒”应对措施/</a>
+    <a href="https://1ightman.top/2024/08/28/%E6%B5%85%E8%B0%88%E2%80%9C%E5%BC%80%E7%9B%92%E2%80%9D%E5%BA%94%E5%AF%B9%E6%8E%AA%E6%96%BD/" title="浅谈“开盒”应对措施">https://1ightman.top/2024/08/28/浅谈“开盒”应对措施/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-cn" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
   </li>
 </ul>
 </div>
@@ -359,6 +387,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hang"
+      src="/images/p.png">
   <p class="site-author-name" itemprop="name">Hang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -383,7 +413,7 @@
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-cn" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -470,6 +500,10 @@
 
 
 
+  
+<script src="/js/local-search.js"></script>
+
+
 
 
 
@@ -508,7 +542,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : 'zh-cn' || 'zh-cn',
       path       : location.pathname,
       recordIP   : true,
-      serverURLs : 'https://eejq7zzn.api.lncldglobal.com/'
+      serverURLs : 'https://eejq7zzn.api.lncldglobal.com'
     });
   }, window.Valine);
 });

@@ -190,6 +190,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://1ightman.top/2023/08/20/arch%E4%B8%8BHP%E6%89%93%E5%8D%B0%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/p.png">
+      <meta itemprop="name" content="Hang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hangblog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/20/arch%E4%B8%8BHP%E6%89%93%E5%8D%B0%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">arch下HP打印机驱动的安装与使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-08-20 22:15:07" itemprop="dateCreated datePublished" datetime="2023-08-20T22:15:07+08:00">2023-08-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-30 12:52:07" itemprop="dateModified" datetime="2024-08-30T12:52:07+08:00">2024-08-30</time>
+              </span>
+
+          
+            <span id="/2023/08/20/arch%E4%B8%8BHP%E6%89%93%E5%8D%B0%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="post-meta-item leancloud_visitors" data-flag-title="arch下HP打印机驱动的安装与使用" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2023/08/20/arch%E4%B8%8BHP%E6%89%93%E5%8D%B0%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/08/20/arch%E4%B8%8BHP%E6%89%93%E5%8D%B0%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>首先我们需要安装必备的驱动软件和服务(cup是必备的，config-printer是GUI的打印机管理程序,hplip是惠普打印机驱动）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S cups</span><br><span class="line">sudo pacman -S system-config-printer</span><br><span class="line">sudo pacman -S hplip</span><br></pre></td></tr></table></figure>
+<p>启用打印服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cups.service</span><br></pre></td></tr></table></figure>
+<p>然后使用命令行安装你的驱动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hp-setup -i </span><br></pre></td></tr></table></figure>
+<p>(里面有英文说明，按照自己实际情况选择即可）</p>
+<h3 id="如果提示-pdd-这种报错"><a href="#如果提示-pdd-这种报错" class="headerlink" title="如果提示 pdd 这种报错"></a>如果提示 pdd 这种报错</h3><p>（有时候没这个报错，直接跳过）<br>我个人理解是需要的文件被打包了，然后hp-setup不认识，解压就行（反正我这么做能跑，原理不清楚）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /usr/share/ppd/HP/ |grep 你的打印机型号</span><br></pre></td></tr></table></figure>
+<p>通常你会得到一个叫做 XXXXX.ppd.gz 的东西 ，使用 tar命令把他解压即可<br>重复一下hp-setup -i 这次连接到你刚刚解压的pdd 应该就能正常装驱动了</p>
+<p>装完之后，打开system-config-printer 添加打印机，剩下的太简单我就一笔带过了嗷……</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
     <link itemprop="mainEntityOfPage" href="https://1ightman.top/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -221,7 +317,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-08-30 12:52:07" itemprop="dateModified" datetime="2024-08-30T12:52:07+08:00">2024-08-30</time>
+                <time title="Modified: 2024-10-01 18:08:49" itemprop="dateModified" datetime="2024-10-01T18:08:49+08:00">2024-10-01</time>
               </span>
 
           
@@ -256,30 +352,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="重要警告"><a href="#重要警告" class="headerlink" title="重要警告"></a>重要警告</h2><p>请不要用于非法用途，仅供参考交流，首发于<a href="blog.r0nge.top">r0nge的博客</a><br><strong>严禁转载！</strong></p>
-<h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><p><strong>为什么我不推荐手机</strong>，原因如下<br>1.手机探测硬件过多<br>2.系统闭源，后门、bug多少未知（不要以为安卓开源！内核是闭源的<br>3.手机软件隔离性不强<br>4.无法使用虚拟机<br>5.手机端利润、市场较大，商业公司众多，可能为了利益牺牲隐私<br>6.用手机的人太多了，<strong>恶意软件重点关注对象（Windows同理</strong></p>
-<h3 id="关于系统"><a href="#关于系统" class="headerlink" title="关于系统"></a>关于系统</h3><p><strong>一定不要：使用预装系统</strong><br>我个人观点：从安全性考虑 WIN&lt;MACOS&lt;LINUX</p>
-<h4 id="衡量发行版是否合适的几个小标准"><a href="#衡量发行版是否合适的几个小标准" class="headerlink" title="衡量发行版是否合适的几个小标准"></a>衡量发行版是否合适的几个小标准</h4><p>（仅个人意见<br> 1.软件足够多（实用性角度<br> 2.开源，并且是社区&#x2F;非营利组织（为啥？ 因为<strong>ubuntu系统搜索搜集了用户数据</strong>原因就是因为他们是商业机构<br> 3.社区、帮助积极（有问题可以解决<br> 4.你有技术能力（选择合适的 例如是arch还是majaro这种问题</p>
-<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><h3 id="尽可能从官方网站下载，养成检查hash值的习惯"><a href="#尽可能从官方网站下载，养成检查hash值的习惯" class="headerlink" title="尽可能从官方网站下载，养成检查hash值的习惯"></a>尽可能从官方网站下载，养成检查hash值的习惯</h3><p>讲个例子:参考<a target="_blank" rel="noopener" href="https://www.cyberscoop.com/modified-tor-browser-chinese-targeting/">外网关于这次事件的报告</a>,tor浏览器一直以安全著称，但是在这次攻击中我们就能看到软件下载源的重要性，攻击者利用人们的大意提供了修改版本的安装包，导致中毒（想详细了解看链接）<br>所以提出 <strong>以下要求</strong><br>    0.从应用市场下载一般是最好的选择<br>    1.查询官网下载（可利用google，bing，duckduckgo等搜索引擎，注意看权重）<br>    2.检查hash值（不要看md5，md5已经被证实不安全）</p>
-<h3 id="选择“安全”的软件"><a href="#选择“安全”的软件" class="headerlink" title="选择“安全”的软件"></a>选择“安全”的软件</h3><p>1.这里建议大家用一些开源的，维护及时的软件，浏览器方面我推荐FireFox<br>    <strong>注意要用ESR版本 不要使用国内版，大众版！</strong><br>    这些版本经常更新一些新功能，但是对于我们长期、稳定、安全的需求相违背，并且可能会存在一些bug和0day&#x2F;Nday漏洞<br>    当然你可能确实需要这些，怎么办呢？<br>2.软件分身 环境隔离<br>    软件分身&lt;环境隔离&lt;虚拟机&lt;物理隔离&lt;物理+网络环境隔离<br>    参考上面的，根据情况自己选择<br>    （一些软件可能会上报手机内其他软件哦，不提是谁了<br>3.及时关注软件病毒提示<br>    可以参考卡巴斯基、GitHub等其他安全平台的渗透报告，了解自己用的软件有没有漏洞</p>
-<h2 id="网上浏览"><a href="#网上浏览" class="headerlink" title="网上浏览"></a>网上浏览</h2><h3 id="关于vpn、加速器"><a href="#关于vpn、加速器" class="headerlink" title="关于vpn、加速器"></a>关于vpn、加速器</h3><p><strong>请在合法前提下使用</strong>，本文只评价技术，不评价用途，好自为之<br><strong>这方面我并不专业，只简单说说，有兴趣看看别的博主</strong><br>1.你自己购买的那些无法匿名化，查订单号、支付方式轻松找到你<br>2.游戏加速器只代理游戏流量，无法实现 <em>某些功能</em><br>3.注意国内外软件分流，最好像上文一样双系统<br>4.尽可能在物理层面使用，例如clash可以增加虚拟网卡，当然wifi代理也行<br>5.梯子只是用来突破GFW，匿名化安全不一定能保证<br><strong>忠告：请遵纪守法！</strong></p>
-<h2 id="关于账号"><a href="#关于账号" class="headerlink" title="关于账号"></a>关于账号</h2><p><strong>不得不说这一部分真的很重要，很实用，信息泄露太危险了</strong></p>
-<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>1.尽量使用虚拟电话号，或者注册一个不经常使用的，只用于注册这一个账号<br>2.不要用私密电话注册一些小网站！ （为啥：你好好想想为啥新买的电话没短信广告、骚扰电话，为啥你现在的有？ 广告如此，信息同理！<br>2.（如果必要）用加密的、纯净的网络 <strong>(包括注册环节)</strong><br>3.设备区分开，不要交叉用<br><strong>4.不要使用真实个人信息</strong></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>1.仍然使用独立网络环境<br>2.<strong>不要用登陆了该账号设备访问不安全网站</strong><br>3.确保<strong>上线时间随机</strong>，更不能与另一台设备经常重叠(参考“顶级黑客 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Jeremy_Hammond">Jeremy Hammond</a> 被捕”事件）</p>
-<h2 id="重要-不要分享你生活中的一切！"><a href="#重要-不要分享你生活中的一切！" class="headerlink" title="[重要]不要分享你生活中的一切！"></a>[重要]不要分享你生活中的一切！</h2><p>朋友圈不离手？抖音天天发？<br>社工黑客最喜欢你这样的！ 不知不觉家庭住址、个人信息全暴露了！接着发吧……<br><strong>站在攻击者的角度思考！</strong></p>
-<h2 id="关于密码"><a href="#关于密码" class="headerlink" title="关于密码"></a>关于密码</h2><p>特别声明：目前绝大多数服务都是安全的，所以 <strong>一个安全的密码 约等于 安全的账号</strong>（前提运营商自己别有内鬼，运营机制足够可靠，但这些大概率没问题）难道那些微信钱被盗的都是因为微信的问题？？</p>
-<p>这里我将放出在<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/zh-cn/%E5%AE%89%E5%85%A8">archlinuxcn_安全</a>中的一些精选内容 <strong>ps:这篇文章真的很好，有时间一定看看！</strong></p>
-<h3 id="【牢记】"><a href="#【牢记】" class="headerlink" title="【牢记】"></a>【牢记】</h3><p>1.每个网站密码都要不同！ <strong>懒就别想安全</strong><br>2.记住几个密码很难么！天天就知道拿自己的名字生日设密码，现代破译程序30s就能暴力破解！<br>最后提醒：（反正你们知道了也不遵守，都是血的教训，不记下一个就是你！<br>1.10位密码 4字母4数字2特殊字符</p>
-<h3 id="如果你实在是懒（几个小妙招"><a href="#如果你实在是懒（几个小妙招" class="headerlink" title="如果你实在是懒（几个小妙招"></a>如果你实在是懒（几个小妙招</h3><p>1.用诗词首字母设密码<br>2.手指错几位打字<br>3.凯撒密码</p>
-<h2 id="浅谈“社工”"><a href="#浅谈“社工”" class="headerlink" title="浅谈“社工”"></a>浅谈“社工”</h2><p>不得不说这个话题实在是复杂，已经不单单属于网络安全的范畴了。如果你真的很担心这方面（事实上值得我们担心）那么还是建议你找一些专业的文章来看，我这里只讲一些理论和基础的内容。</p>
-<h3 id="为啥社工很危险"><a href="#为啥社工很危险" class="headerlink" title="为啥社工很危险"></a>为啥社工很危险</h3><p>成本低，最关键的是门槛也很低（往下看你就知道了），关键如果真的掌握某些信息很要命！</p>
-<h3 id="我见过的几种攻击方式"><a href="#我见过的几种攻击方式" class="headerlink" title="我见过的几种攻击方式"></a>我见过的几种攻击方式</h3><p>1.冒充亲友套取信息<br>2.通过已经泄漏的密码猜测你的身份信息、密码；进一步扩大攻击面（这一部分可以和密码那一部分一起看）<br>3.通过社交媒体，软件（这个很常见哦）比如<br>   支付宝看你的名字<br>   通过电话号看你的抖音、知乎、小红书、微信等账号信息，进一步了解你，发动攻击<br><strong>总结一下，就是防不胜防</strong></p>
-<h3 id="简单防范"><a href="#简单防范" class="headerlink" title="简单防范"></a>简单防范</h3><p>刚才解释了奥，我懂得不多，只简单说<br>1.增强警惕心，不贪小便宜，再亲密的家人也先核实身份，最好有个心有灵犀的小暗号，最关键的身份确认<br>2.用好我匿名化那几招。<br>3.别什么东西都发！别人烦、自己安全受影响<br>4.管理好密码、电话<br>5.该报警报警，别和任何人妥协！</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>挖槽这次真的写了好多，算是有感而发吧，马上升初三了，时间越来越很少，希望大家生活顺利，我也能学习顺利吧……<br>以后不出意外的话断断续续更，几乎失联了哈哈哈<br>（明年的这个时候我还会回来的！）</p>
-<p><strong>祝大家万事顺利，安全无忧</strong></p>
-<pre><code>        ———————————R0nge-2023.9.1
-</code></pre>
-
+          <p>这篇文章提供了关于网络安全的实用建议，重点是避免使用手机及预装系统，推荐使用开源操作系统（如Linux），并强调从官方网站下载软件的重要性。文章还建议注册账户时使用虚拟电话和不真实个人信息，使用独立网络环境，以及保持密码的安全性，提倡使用不同网站的不同密码。此外，社工攻击的风险被指出，强调了增强警惕和隐私保护的必要性。总体而言，文章旨在提高读者的网络安全意识与防护能力。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -329,7 +410,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-08-30 12:52:07" itemprop="dateModified" datetime="2024-08-30T12:52:07+08:00">2024-08-30</time>
+                <time title="Modified: 2024-10-01 18:05:48" itemprop="dateModified" datetime="2024-10-01T18:05:48+08:00">2024-10-01</time>
               </span>
 
           
@@ -364,21 +445,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>文章转载于 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/367704389">知乎原文</a> 侵删</p>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>英国作家乔纳森·斯威夫特创作的一部杰出的游记体讽刺小说 。<br>全书共四个部分，描写了外科医生格列佛航海漂流到小人国、大人国、飞岛国、慧骃国的种种经历。<br>小说通过虚构的情节，夸张的手法，对当时的英国社会政治、法律、议会、竞争、军事、教育、社会风尚乃至整个人类的种种劣根性都进行了无情的讽刺和抨击，歌颂了劳动人民的反抗精神和正义斗争。</p>
-<h2 id="第一卷-利立浦特（小人国）"><a href="#第一卷-利立浦特（小人国）" class="headerlink" title="第一卷 利立浦特（小人国）"></a>第一卷 利立浦特（小人国）</h2><p>外科医生格列佛随航程途遇险,死里逃生,漂到利立浦特(小人国),被小人捆住献给国王。</p>
-<p>格列佛温顺的表现逐渐赢得了国王和人民对他的好感,他也渐渐熟悉了小人国的风俗习惯。在格列佛帮助下打败了同样是小人国的“不来夫斯古“，但是格列佛不愿灭掉不来夫斯古帝国,使皇帝很不高兴。这时,皇后寝宫失火,格列佛情急生智,撒了一泡尿把火扑灭,谁知却让皇后大为恼火。海军大臣嫉妒他的功劳；财政大臣又怀疑他的妻子和格列佛私通；他们密谋给格列佛定叛国罪，并把他的双眼剌瞎，将他活活饿死。格列佛被迫逃到不来夫斯古国，该国为他准备了相应的物资，他搭乘英国商船平安回国。</p>
-<h2 id="第二卷：布罗卜丁奈格（大人国）游记。"><a href="#第二卷：布罗卜丁奈格（大人国）游记。" class="headerlink" title="第二卷：布罗卜丁奈格（大人国）游记。"></a>第二卷：布罗卜丁奈格（大人国）游记。</h2><p>格列佛在利立浦特人的心目中是个庞然大物，但一到布罗卜丁奈格，他就象田间的鼬鼠一般小了。格列佛被当作小玩艺装入手提箱里，带到各城镇表演展览。后来，国王召见他，他慷慨陈辞，夸耀自己的祖国的伟大，政治的贤明，法律的公正，然而均一一遭到国王的抨击与驳斥。</p>
-<p>格列佛在该国的第三年,陪同国王巡视边疆。由于思乡心切，他假装生病,来到海边呼吸新鲜空气。天空中的鹰错把他住的箱子当成乌龟叼了起来。几只鹰在空中争夺，箱子掉进海里，被路过的一艘船发现,格列佛获救后,乘船回到英国。</p>
-<h2 id="第三卷：勒皮他、巴尔尼巴比、拉格奈格、格勒大锥、日本游记。（飞岛国，巫人国）"><a href="#第三卷：勒皮他、巴尔尼巴比、拉格奈格、格勒大锥、日本游记。（飞岛国，巫人国）" class="headerlink" title="第三卷：勒皮他、巴尔尼巴比、拉格奈格、格勒大锥、日本游记。（飞岛国，巫人国）"></a>第三卷：勒皮他、巴尔尼巴比、拉格奈格、格勒大锥、日本游记。（飞岛国，巫人国）</h2><p>在家呆了一段时间,格列佛又随“好望号“出海。这一次,格列佛所乘的船遭贼船劫持,格列佛侥幸逃脱,被一座叫“勒皮他“的飞岛救起.这些人的相貌异常,衣饰古怪,整天沉思默想.国王和贵族都住在飞岛上,老百姓则住在巴尔尼巴比等三座海岛上.格列佛离开飞岛后,来到巴尔尼巴比进行访问,并参观了岛上的“拉格多科学院“.这所科学院研究的都是些荒诞不经的课题,结果造成全国遍地荒凉,房屋坍塌,人民无衣无食。接着,格列佛来到巫人岛.岛上的总督精通魔法,能随意召唤任何鬼魂,格列佛因此会见了古代的许多名人,结果发现史书上的记载很多不符合史实,甚至是非颠倒.而后,格列佛又游览了拉格耐格王国,见到一种长生不老人“斯特鲁布鲁格“.离开该国后,格列佛来到日本,然后搭乘荷兰船回到英国，历时5年6个月，是四次航海时间最长的一次。<br>第四卷：慧駰国游记。</p>
-<p>他的部下图谋不轨，把他禁闭在舱里，后又把他扔到一块不知名的陆地上，被“耶胡”包围，后被一匹灰色的马救下并带回家。格列佛被放逐到“慧骃国”。这儿马是该国有理性的居民和统治者。而“耶胡“则是马所豢养和役使的畜生。格列佛的举止言谈在“慧骃国”的马民看来是一只有理性的“列胡” 。 在“慧骃“各种美德的感化下,格列佛一心想留在“慧骃”国.然而“慧骃”国决议要消灭那里的列胡.所以格列佛的愿望无法实现。无奈之下,格列佛只好乘小船离开该国打道回府。格列佛怀着对“慧骃国”的向往,一辈子与马为友.并且厌弃了世俗，决心不与他人同流合污。将慧骃与列胡作对比，凸显了理智、仁慈、友谊的人性的可贵和贪婪、无信，嫉妒的丑陋。</p>
-<h2 id="主要人物分析"><a href="#主要人物分析" class="headerlink" title="主要人物分析"></a>主要人物分析</h2><p>（1）格列佛：喜欢冒险，善于学习、观察和思考；性情朴实温和，善良，知恩图报；同时他聪明机智，有胆识，追求自由，爱憎分明。总的来说他是一个具有质疑精神，酷爱真理，有忍耐力的游者。<br>格列佛是个正面的理想的人物。他总是坦率地叙述自己的弱点和错误，而对自己的优点则只字不提。他谦逊好学，努力用新眼光去认识新的现实。他从不自暴自弃，纵使将他当作玩物到各地供人观赏，仍泰然自若，保持自身的尊严，以平等的姿态与大人国的国王交谈。他勇于帮助小人国抵抗外族入侵，但断然拒绝为小人国国王的侵略扩张政策效劳。</p>
-<p>（2）佛林奈浦（财政大臣）：猜忌、阴险、狠毒、狡诈。<br>【相关情节：格列佛的仁怀宽厚和俘获不来夫斯古国舰队的军功受到小人国国王的赏识，佛林奈浦就大为恼火，并怀疑格列佛与自己的妻子通奸，就联络其他大臣设谋陷害、大加污蔑，最后迫使格列佛逃往不来夫斯古。 】</p>
-<p>（3）斯开瑞士（海军大将）：嫉妒、阴险、狡黠<br>【相关情节：小人国的国王野心勃勃，在与邻国不来夫斯古战争中，格列佛涉过海峡把不来夫斯古国大部分舰队俘获过来，从此格列佛受到小人国国王重用，斯开瑞士就大为不满，与财政大臣合谋谋害格列佛。】</p>
-<p>（4）布罗卜丁奈格国王：是位博学、理智、仁慈、治国能力强的开明国君。<br>【相关情节：布罗卜丁奈格国王博学多识，性情善良，他用理智、公理、仁慈来治理国家，他厌恶格列佛所说的卑劣的政客、流血的战争。】</p>
-<p>（5）慧骃国国王：理智贤明、勤劳勇敢、仁慈友爱、公正诚信——作者心目中理想的人类。</p>
-<p>（6）小人国王后：小气，贪慕虚荣 。</p>
-
+          <p>转载《格列佛游记》要点梳理</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/07/13/%5B%E8%BD%AC%E8%BD%BD%5D%E3%80%8A%E6%A0%BC%E5%88%97%E4%BD%9B%E6%B8%B8%E8%AE%B0%E3%80%8B%E8%A6%81%E7%82%B9%E6%A2%B3%E7%90%86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -428,7 +503,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-08-30 12:52:07" itemprop="dateModified" datetime="2024-08-30T12:52:07+08:00">2024-08-30</time>
+                <time title="Modified: 2024-10-01 18:07:34" itemprop="dateModified" datetime="2024-10-01T18:07:34+08:00">2024-10-01</time>
               </span>
 
           
@@ -463,19 +538,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1H9o3SBo1UdsHSrXBE_TyGg">https://pan.baidu.com/s/1H9o3SBo1UdsHSrXBE_TyGg</a> 提取码: XMRX<br>刷机包通用 但是platform tools是linux的，因为比较难找所以直接给了，windows自己找一下，可能还需要驱动啥的<br>#</p>
-<p>刷机指令</p>
-<pre><code>fastboot oem unlock（此时会有yes/no两种选项，按一下电源键使yes变红，然后长按电源键）
-fastboot flash bootloader bootloder.img
-fastboot flash boot boot.img
-fastboot flash cache cache.img
-fastboot flash recovery recovery.img
-fastboot flash system system.img
-fastboot flash userdata userdats.img
-fastboot oem lock(不回锁每次开机都有安全提示）
-fastboot reboot(重启，然后用手机配对即可)
-</code></pre>
-
+          <p>分享一下HuaweiWatch2的刷机包</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/06/28/%E5%88%86%E4%BA%ABHuaweiWatch2%E5%88%B7%E6%9C%BA%E5%8C%85/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -755,13 +826,13 @@ fastboot reboot(重启，然后用手机配对即可)
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -872,7 +943,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
     new Valine({
       el         : '#valine-comments',
-      verify     : false,
+      verify     : true,
       notify     : false,
       appId      : 'EejQ7ZznT0HftylxlRDpptBD-MdYXbMMI',
       appKey     : 'YeinAk83wEliwFLOhGGqzOST',

@@ -1,280 +1,295 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/a.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/a.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/p.png">
-  <link rel="mask-icon" href="/images/a.png" color="#222">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hang">
+    
+    <title>
+        
+            关于互联网匿名化建议 |
+        
+        Hang的Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="stylesheet" href="/css/main.css">
+    
+        <link rel="shortcut icon" href="/images/p.png">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
 
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"1ightman.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"1ightman.top","root":"/","language":"zh-cn","path":"search.xml"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Hang的Blog","author":"Hang","avatar":"/images/p.png","logo":"/images/p.png","favicon":"/images/p.png"},"menu":{"home":"/","archives":"/archives","tags":"/tags","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":false,"preload":false},"comment":{"enable":true,"use":"valine","valine":{"appid":"EejQ7ZznT0HftylxlRDpptBD-MdYXbMMI","appkey":"YeinAk83wEliwFLOhGGqzOST","server_urls":"https://ac.1ightman.top","placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
   </script>
-
-  <meta name="description" content="这篇文章提供了关于网络安全的实用建议，重点是避免使用手机及预装系统，推荐使用开源操作系统（如Linux），并强调从官方网站下载软件的重要性。文章还建议注册账户时使用虚拟电话和不真实个人信息，使用独立网络环境，以及保持密码的安全性，提倡使用不同网站的不同密码。此外，社工攻击的风险被指出，强调了增强警惕和隐私保护的必要性。总体而言，文章旨在提高读者的网络安全意识与防护能力。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于互联网匿名化建议">
-<meta property="og:url" content="https://1ightman.top/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/index.html">
-<meta property="og:site_name" content="hangblog">
-<meta property="og:description" content="这篇文章提供了关于网络安全的实用建议，重点是避免使用手机及预装系统，推荐使用开源操作系统（如Linux），并强调从官方网站下载软件的重要性。文章还建议注册账户时使用虚拟电话和不真实个人信息，使用独立网络环境，以及保持密码的安全性，提倡使用不同网站的不同密码。此外，社工攻击的风险被指出，强调了增强警惕和隐私保护的必要性。总体而言，文章旨在提高读者的网络安全意识与防护能力。">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-07-21T13:46:01.000Z">
-<meta property="article:modified_time" content="2024-10-01T10:08:49.089Z">
-<meta property="article:author" content="Hang">
-<meta property="article:tag" content="网络安全">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://1ightman.top/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/">
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-cn'
-  };
-</script>
-
-  <title>关于互联网匿名化建议 | hangblog</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">hangblog</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-主页">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
-
-  </li>
-        <li class="menu-item menu-item-关于">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-标签">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-全部">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部</a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
+<body>
+<div class="progress-bar-container">
+    
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-  <a href="https://github.com/1ightman" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+</div>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
             
+<header class="header-wrapper">
 
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
-    <link itemprop="mainEntityOfPage" href="https://1ightman.top/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/">
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/p.png">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Hang的Blog
+            </a>
+        </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/p.png">
-      <meta itemprop="name" content="Hang">
-      <meta itemprop="description" content="">
-    </span>
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                ABOUT
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hangblog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          关于互联网匿名化建议
-        </h1>
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            ABOUT
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+    <div class="window-mask"></div>
 
-              <time title="Created: 2023-07-21 21:46:01" itemprop="dateCreated datePublished" datetime="2023-07-21T21:46:01+08:00">2023-07-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-01 18:08:49" itemprop="dateModified" datetime="2024-10-01T18:08:49+08:00">2024-10-01</time>
-              </span>
+</header>
 
-          
-            <span id="/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/" class="post-meta-item leancloud_visitors" data-flag-title="关于互联网匿名化建议" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <div class="post-description">这篇文章提供了关于网络安全的实用建议，重点是避免使用手机及预装系统，推荐使用开源操作系统（如Linux），并强调从官方网站下载软件的重要性。文章还建议注册账户时使用虚拟电话和不真实个人信息，使用独立网络环境，以及保持密码的安全性，提倡使用不同网站的不同密码。此外，社工攻击的风险被指出，强调了增强警惕和隐私保护的必要性。总体而言，文章旨在提高读者的网络安全意识与防护能力。</div>
 
         </div>
-      </header>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        关于互联网匿名化建议
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/p.png">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Hang</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2023-07-21 21:46:01</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Oct 03 2024 20:08:02 GMT+0800">2024-10-03 20:08:02</span>
+            </span>
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</div>
 
-      
-        <h2 id="重要警告"><a href="#重要警告" class="headerlink" title="重要警告"></a>重要警告</h2><p>请不要用于非法用途，仅供参考交流，首发于<a href="blog.r0nge.top">r0nge的博客</a><br><strong>严禁转载！</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="重要警告"><a href="#重要警告" class="headerlink" title="重要警告"></a>重要警告</h2><p>请不要用于非法用途，仅供参考交流，首发于<a href="blog.r0nge.top">r0nge的博客</a><br><strong>严禁转载！</strong></p>
 <h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><p><strong>为什么我不推荐手机</strong>，原因如下<br>1.手机探测硬件过多<br>2.系统闭源，后门、bug多少未知（不要以为安卓开源！内核是闭源的<br>3.手机软件隔离性不强<br>4.无法使用虚拟机<br>5.手机端利润、市场较大，商业公司众多，可能为了利益牺牲隐私<br>6.用手机的人太多了，<strong>恶意软件重点关注对象（Windows同理</strong></p>
 <h3 id="关于系统"><a href="#关于系统" class="headerlink" title="关于系统"></a>关于系统</h3><p><strong>一定不要：使用预装系统</strong><br>我个人观点：从安全性考虑 WIN&lt;MACOS&lt;LINUX</p>
 <h4 id="衡量发行版是否合适的几个小标准"><a href="#衡量发行版是否合适的几个小标准" class="headerlink" title="衡量发行版是否合适的几个小标准"></a>衡量发行版是否合适的几个小标准</h4><p>（仅个人意见<br> 1.软件足够多（实用性角度<br> 2.开源，并且是社区&#x2F;非营利组织（为啥？ 因为<strong>ubuntu系统搜索搜集了用户数据</strong>原因就是因为他们是商业机构<br> 3.社区、帮助积极（有问题可以解决<br> 4.你有技术能力（选择合适的 例如是arch还是majaro这种问题</p>
-<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><h3 id="尽可能从官方网站下载，养成检查hash值的习惯"><a href="#尽可能从官方网站下载，养成检查hash值的习惯" class="headerlink" title="尽可能从官方网站下载，养成检查hash值的习惯"></a>尽可能从官方网站下载，养成检查hash值的习惯</h3><p>讲个例子:参考<a target="_blank" rel="noopener" href="https://www.cyberscoop.com/modified-tor-browser-chinese-targeting/">外网关于这次事件的报告</a>,tor浏览器一直以安全著称，但是在这次攻击中我们就能看到软件下载源的重要性，攻击者利用人们的大意提供了修改版本的安装包，导致中毒（想详细了解看链接）<br>所以提出 <strong>以下要求</strong><br>    0.从应用市场下载一般是最好的选择<br>    1.查询官网下载（可利用google，bing，duckduckgo等搜索引擎，注意看权重）<br>    2.检查hash值（不要看md5，md5已经被证实不安全）</p>
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><h3 id="尽可能从官方网站下载，养成检查hash值的习惯"><a href="#尽可能从官方网站下载，养成检查hash值的习惯" class="headerlink" title="尽可能从官方网站下载，养成检查hash值的习惯"></a>尽可能从官方网站下载，养成检查hash值的习惯</h3><p>讲个例子:参考<a class="link"   target="_blank" rel="noopener" href="https://www.cyberscoop.com/modified-tor-browser-chinese-targeting/" >外网关于这次事件的报告<i class="fas fa-external-link-alt"></i></a>,tor浏览器一直以安全著称，但是在这次攻击中我们就能看到软件下载源的重要性，攻击者利用人们的大意提供了修改版本的安装包，导致中毒（想详细了解看链接）<br>所以提出 <strong>以下要求</strong><br>    0.从应用市场下载一般是最好的选择<br>    1.查询官网下载（可利用google，bing，duckduckgo等搜索引擎，注意看权重）<br>    2.检查hash值（不要看md5，md5已经被证实不安全）</p>
 <h3 id="选择“安全”的软件"><a href="#选择“安全”的软件" class="headerlink" title="选择“安全”的软件"></a>选择“安全”的软件</h3><p>1.这里建议大家用一些开源的，维护及时的软件，浏览器方面我推荐FireFox<br>    <strong>注意要用ESR版本 不要使用国内版，大众版！</strong><br>    这些版本经常更新一些新功能，但是对于我们长期、稳定、安全的需求相违背，并且可能会存在一些bug和0day&#x2F;Nday漏洞<br>    当然你可能确实需要这些，怎么办呢？<br>2.软件分身 环境隔离<br>    软件分身&lt;环境隔离&lt;虚拟机&lt;物理隔离&lt;物理+网络环境隔离<br>    参考上面的，根据情况自己选择<br>    （一些软件可能会上报手机内其他软件哦，不提是谁了<br>3.及时关注软件病毒提示<br>    可以参考卡巴斯基、GitHub等其他安全平台的渗透报告，了解自己用的软件有没有漏洞</p>
 <h2 id="网上浏览"><a href="#网上浏览" class="headerlink" title="网上浏览"></a>网上浏览</h2><h3 id="关于vpn、加速器"><a href="#关于vpn、加速器" class="headerlink" title="关于vpn、加速器"></a>关于vpn、加速器</h3><p><strong>请在合法前提下使用</strong>，本文只评价技术，不评价用途，好自为之<br><strong>这方面我并不专业，只简单说说，有兴趣看看别的博主</strong><br>1.你自己购买的那些无法匿名化，查订单号、支付方式轻松找到你<br>2.游戏加速器只代理游戏流量，无法实现 <em>某些功能</em><br>3.注意国内外软件分流，最好像上文一样双系统<br>4.尽可能在物理层面使用，例如clash可以增加虚拟网卡，当然wifi代理也行<br>5.梯子只是用来突破GFW，匿名化安全不一定能保证<br><strong>忠告：请遵纪守法！</strong></p>
 <h2 id="关于账号"><a href="#关于账号" class="headerlink" title="关于账号"></a>关于账号</h2><p><strong>不得不说这一部分真的很重要，很实用，信息泄露太危险了</strong></p>
 <h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>1.尽量使用虚拟电话号，或者注册一个不经常使用的，只用于注册这一个账号<br>2.不要用私密电话注册一些小网站！ （为啥：你好好想想为啥新买的电话没短信广告、骚扰电话，为啥你现在的有？ 广告如此，信息同理！<br>2.（如果必要）用加密的、纯净的网络 <strong>(包括注册环节)</strong><br>3.设备区分开，不要交叉用<br><strong>4.不要使用真实个人信息</strong></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>1.仍然使用独立网络环境<br>2.<strong>不要用登陆了该账号设备访问不安全网站</strong><br>3.确保<strong>上线时间随机</strong>，更不能与另一台设备经常重叠(参考“顶级黑客 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Jeremy_Hammond">Jeremy Hammond</a> 被捕”事件）</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>1.仍然使用独立网络环境<br>2.<strong>不要用登陆了该账号设备访问不安全网站</strong><br>3.确保<strong>上线时间随机</strong>，更不能与另一台设备经常重叠(参考“顶级黑客 <a class="link"   target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Jeremy_Hammond" >Jeremy Hammond<i class="fas fa-external-link-alt"></i></a> 被捕”事件）</p>
 <h2 id="重要-不要分享你生活中的一切！"><a href="#重要-不要分享你生活中的一切！" class="headerlink" title="[重要]不要分享你生活中的一切！"></a>[重要]不要分享你生活中的一切！</h2><p>朋友圈不离手？抖音天天发？<br>社工黑客最喜欢你这样的！ 不知不觉家庭住址、个人信息全暴露了！接着发吧……<br><strong>站在攻击者的角度思考！</strong></p>
 <h2 id="关于密码"><a href="#关于密码" class="headerlink" title="关于密码"></a>关于密码</h2><p>特别声明：目前绝大多数服务都是安全的，所以 <strong>一个安全的密码 约等于 安全的账号</strong>（前提运营商自己别有内鬼，运营机制足够可靠，但这些大概率没问题）难道那些微信钱被盗的都是因为微信的问题？？</p>
-<p>这里我将放出在<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/zh-cn/%E5%AE%89%E5%85%A8">archlinuxcn_安全</a>中的一些精选内容 <strong>ps:这篇文章真的很好，有时间一定看看！</strong></p>
+<p>这里我将放出在<a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/zh-cn/%E5%AE%89%E5%85%A8" >archlinuxcn_安全<i class="fas fa-external-link-alt"></i></a>中的一些精选内容 <strong>ps:这篇文章真的很好，有时间一定看看！</strong></p>
 <h3 id="【牢记】"><a href="#【牢记】" class="headerlink" title="【牢记】"></a>【牢记】</h3><p>1.每个网站密码都要不同！ <strong>懒就别想安全</strong><br>2.记住几个密码很难么！天天就知道拿自己的名字生日设密码，现代破译程序30s就能暴力破解！<br>最后提醒：（反正你们知道了也不遵守，都是血的教训，不记下一个就是你！<br>1.10位密码 4字母4数字2特殊字符</p>
 <h3 id="如果你实在是懒（几个小妙招"><a href="#如果你实在是懒（几个小妙招" class="headerlink" title="如果你实在是懒（几个小妙招"></a>如果你实在是懒（几个小妙招</h3><p>1.用诗词首字母设密码<br>2.手指错几位打字<br>3.凯撒密码</p>
 <h2 id="浅谈“社工”"><a href="#浅谈“社工”" class="headerlink" title="浅谈“社工”"></a>浅谈“社工”</h2><p>不得不说这个话题实在是复杂，已经不单单属于网络安全的范畴了。如果你真的很担心这方面（事实上值得我们担心）那么还是建议你找一些专业的文章来看，我这里只讲一些理论和基础的内容。</p>
@@ -286,255 +301,373 @@
 <pre><code>        ———————————R0nge-2023.9.1
 </code></pre>
 
-    </div>
+                    
+                </div>
 
-    
-    
-    
-        
+                
 
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:  </strong>Hang
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link: </strong>
-    <a href="https://1ightman.top/2023/07/21/%E5%85%B3%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BF%E5%90%8D%E5%8C%96%E5%BB%BA%E8%AE%AE/" title="关于互联网匿名化建议">https://1ightman.top/2023/07/21/关于互联网匿名化建议/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-cn" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/08/20/arch%E4%B8%8BHP%E6%89%93%E5%8D%B0%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"
+                                   title="arch下HP打印机驱动的安装与使用"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">arch下HP打印机驱动的安装与使用</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/07/13/%5B%E8%BD%AC%E8%BD%BD%5D%E3%80%8A%E6%A0%BC%E5%88%97%E4%BD%9B%E6%B8%B8%E8%AE%B0%E3%80%8B%E8%A6%81%E7%82%B9%E6%A2%B3%E7%90%86/"
+                                   title="转载《格列佛游记》要点梳理"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">转载《格列佛游记》要点梳理</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;Comments
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">Comment plugin failed to load</span>
+    <button class="reload keep-button">Click to reload</button>
 </div>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"># 网络安全</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2023/07/13/%5B%E8%BD%AC%E8%BD%BD%5D%E3%80%8A%E6%A0%BC%E5%88%97%E4%BD%9B%E6%B8%B8%E8%AE%B0%E3%80%8B%E8%A6%81%E7%82%B9%E6%A2%B3%E7%90%86/" rel="prev" title="转载《格列佛游记》要点梳理">
-      <i class="fa fa-chevron-left"></i> 转载《格列佛游记》要点梳理
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/08/20/arch%E4%B8%8BHP%E6%89%93%E5%8D%B0%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" rel="next" title="arch下HP打印机驱动的安装与使用">
-      arch下HP打印机驱动的安装与使用 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">Loading comment plugin</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
   }
 </script>
 
+        
+            
+
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script 
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: 'EejQ7ZznT0HftylxlRDpptBD-MdYXbMMI',
+              appKey: 'YeinAk83wEliwFLOhGGqzOST',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '',
+              lang: 'zh-cn'.toLowerCase()
+            }
+
+            if ('https://ac.1ightman.top') {
+              config.serverURLs = 'https://ac.1ightman.top'
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('false' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
         </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E8%AD%A6%E5%91%8A"><span class="nav-number">1.</span> <span class="nav-text">重要警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">硬件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.</span> <span class="nav-text">关于系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A1%E9%87%8F%E5%8F%91%E8%A1%8C%E7%89%88%E6%98%AF%E5%90%A6%E5%90%88%E9%80%82%E7%9A%84%E5%87%A0%E4%B8%AA%E5%B0%8F%E6%A0%87%E5%87%86"><span class="nav-number">2.1.1.</span> <span class="nav-text">衡量发行版是否合适的几个小标准</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%BD%E5%8F%AF%E8%83%BD%E4%BB%8E%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%E4%B8%8B%E8%BD%BD%EF%BC%8C%E5%85%BB%E6%88%90%E6%A3%80%E6%9F%A5hash%E5%80%BC%E7%9A%84%E4%B9%A0%E6%83%AF"><span class="nav-number">3.1.</span> <span class="nav-text">尽可能从官方网站下载，养成检查hash值的习惯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E2%80%9C%E5%AE%89%E5%85%A8%E2%80%9D%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">选择“安全”的软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E4%B8%8A%E6%B5%8F%E8%A7%88"><span class="nav-number">4.</span> <span class="nav-text">网上浏览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Evpn%E3%80%81%E5%8A%A0%E9%80%9F%E5%99%A8"><span class="nav-number">4.1.</span> <span class="nav-text">关于vpn、加速器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%B4%A6%E5%8F%B7"><span class="nav-number">5.</span> <span class="nav-text">关于账号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C"><span class="nav-number">5.1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">5.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81-%E4%B8%8D%E8%A6%81%E5%88%86%E4%BA%AB%E4%BD%A0%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E4%B8%80%E5%88%87%EF%BC%81"><span class="nav-number">6.</span> <span class="nav-text">[重要]不要分享你生活中的一切！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%AF%86%E7%A0%81"><span class="nav-number">7.</span> <span class="nav-text">关于密码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E7%89%A2%E8%AE%B0%E3%80%91"><span class="nav-number">7.1.</span> <span class="nav-text">【牢记】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%AE%9E%E5%9C%A8%E6%98%AF%E6%87%92%EF%BC%88%E5%87%A0%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B"><span class="nav-number">7.2.</span> <span class="nav-text">如果你实在是懒（几个小妙招</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%85%E8%B0%88%E2%80%9C%E7%A4%BE%E5%B7%A5%E2%80%9D"><span class="nav-number">8.</span> <span class="nav-text">浅谈“社工”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E5%95%A5%E7%A4%BE%E5%B7%A5%E5%BE%88%E5%8D%B1%E9%99%A9"><span class="nav-number">8.1.</span> <span class="nav-text">为啥社工很危险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E8%A7%81%E8%BF%87%E7%9A%84%E5%87%A0%E7%A7%8D%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F"><span class="nav-number">8.2.</span> <span class="nav-text">我见过的几种攻击方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E9%98%B2%E8%8C%83"><span class="nav-number">8.3.</span> <span class="nav-text">简单防范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">9.</span> <span class="nav-text">结语</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Hang"
-      src="/images/p.png">
-  <p class="site-author-name" itemprop="name">Hang</p>
-  <div class="site-description" itemprop="description"></div>
+        
+    </div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">16</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Hang</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/1ightman" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1ightman" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:mzhangrx@icloud.com" title="E-Mail → mailto:mzhangrx@icloud.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
-      </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-cn" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
 
+        </div>
+    
 
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-      </div>
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2024</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Hang</span>
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
 </div>
 
-        
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+</main>
 
 
 
 
 
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<!-- common js -->
 
 <script src="/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
 
 
-<script src="/js/schemes/pisces.js"></script>
+<!-- local search -->
 
 
-<script src="/js/next-boot.js"></script>
+<!-- lazyload -->
 
 
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
 
 
-  
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
 
 
+<!-- pjax -->
 
 
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : true,
-      notify     : false,
-      appId      : 'EejQ7ZznT0HftylxlRDpptBD-MdYXbMMI',
-      appKey     : 'YeinAk83wEliwFLOhGGqzOST',
-      placeholder: "网络不是法外之地，学会对自己的言行负责 请先看评论守则",
-      avatar     : '',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : true,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : true,
-      serverURLs : 'https://ac.1ightman.top'
-    });
-  }, window.Valine);
-});
-</script>
 
 </body>
 </html>

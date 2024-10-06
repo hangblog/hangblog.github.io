@@ -105,12 +105,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hithere</title>
-    <url>/2024/08/17/Hithere/</url>
-    <content><![CDATA[<p>始建于2022<br>本站不久前迁移过，许多东西还正在调试，如有Bugs欢迎联系(<a class="link"   href="mailto:&#x6d;&#x7a;&#x68;&#97;&#110;&#x67;&#x72;&#120;&#x40;&#x69;&#99;&#x6c;&#x6f;&#117;&#x64;&#x2e;&#x63;&#x6f;&#x6d;" >&#x6d;&#x7a;&#x68;&#97;&#110;&#x67;&#x72;&#120;&#x40;&#x69;&#99;&#x6c;&#x6f;&#117;&#x64;&#x2e;&#x63;&#x6f;&#x6d;<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>转载《格列佛游记》要点梳理</title>
     <url>/2023/07/13/%5B%E8%BD%AC%E8%BD%BD%5D%E3%80%8A%E6%A0%BC%E5%88%97%E4%BD%9B%E6%B8%B8%E8%AE%B0%E3%80%8B%E8%A6%81%E7%82%B9%E6%A2%B3%E7%90%86/</url>
     <content><![CDATA[<p>转载《格列佛游记》要点梳理</p>
@@ -176,14 +170,15 @@
 <p>于是我在localhost里运行了服务器，打开Google浏览器f12开发者预览，查看当我点击发送时的network活动</p>
 <p>发现被发送到了<a class="link"   href="https://cn.gravatar.com/" >https://cn.gravatar.com<i class="fas fa-external-link-alt"></i></a> </p>
 <p>查看配置，是<strong>serverURLs</strong>这一项的问题</p>
-<p>来到官方文档<a class="link"   href="https://valine.js.org/#/avatar" >https://valine.js.org/#/avatar<i class="fas fa-external-link-alt"></i></a> 查看“配置项”， 找到<strong>serverURLs</strong>，发现原文档的叙述如下</p>
-<p><img   src="/img/iShot_2022-12-31_18.56.45.png"  alt="官方截图"></p>
+<p>来到官方文档<a class="link"   href="https://valine.js.org/#/avatar" >https://valine.js.org/#/avatar<i class="fas fa-external-link-alt"></i></a> 查看“配置项”， 找到<strong>serverURLs</strong></p>
+<p><img   src="https://ice.frostsky.com/2024/10/06/9e22f1af3c3ca14020ad07499a6d8c91.png"  alt="官网描述"></p>
 <p>原来如此，是多余的设置！</p>
 <h2 id="最终解决"><a href="#最终解决" class="headerlink" title="最终解决"></a>最终解决</h2><p>修改如下（删除或注释掉serverURLs）</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line"><span class="attr">appId:</span> <span class="string">【没问题】</span></span><br><span class="line"><span class="attr">appKey:</span> <span class="string">【没问题】</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">&#x27;&#x27;</span> <span class="comment"># gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line"><span class="comment">#我直接注释掉了 --&gt; serverURLs: https://cn.gravatar.com</span></span><br><span class="line"><span class="attr">bg:</span> <span class="comment"># valine background</span></span><br><span class="line"><span class="attr">visitor:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">option:</span></span><br></pre></td></tr></table></figure>
 
 <p>OK，问题就此解决：）</p>
 <p>哦另外新年快乐！</p>
+<h2 id="2024后记"><a href="#2024后记" class="headerlink" title="2024后记"></a>2024后记</h2><p>现在由于leancloud加强管理，现在海外版域名必须自定义了……</p>
 ]]></content>
       <tags>
         <tag>Debug</tag>
@@ -836,6 +831,8 @@ fastboot reboot(重启，然后用手机配对即可)
     <title>评论守则</title>
     <url>/2024/09/16/%E8%AF%84%E8%AE%BA%E5%AE%88%E5%88%99/</url>
     <content><![CDATA[<h2 id="我不能发哪些内容"><a href="#我不能发哪些内容" class="headerlink" title="我不能发哪些内容"></a>我不能发哪些内容</h2><p><strong>您的用户名不能是 hang 或者 Hang 或者 航 HANG 这些词是被系统锁定的</strong><br>您不能<strong>使用多个用户名</strong> ，如果一个IP使用了多个用户名，那么该IP会被我们封禁</p>
+<p>请你恪守道德，遵守法律，网络不是法外之地，你的每个操作势必留痕，在做任何事情前请考虑后果，成熟一点</p>
+<p>您只被允许进行以下评论活动<br>参与讨论或提出建议<br>以下活动是被禁止的✋<br>1.敏感话题<br>2.违法行为会言论<br>3攻击他人<br>4.滥用服务资源，扰乱博客秩序<br>5其它我们认为的不当内容</p>
 <h2 id="我们记录了哪些数据"><a href="#我们记录了哪些数据" class="headerlink" title="我们记录了哪些数据"></a>我们记录了哪些数据</h2><p>IP 浏览器 浏览器内核 设备型号 系统版本  网络格式 语言</p>
 <p>除非受到不可抗力，我们不会主动提供您的数据</p>
 ]]></content>
